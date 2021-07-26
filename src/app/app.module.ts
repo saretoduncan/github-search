@@ -9,6 +9,8 @@ import { NavComponent } from "./nav/nav.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { NgProgressModule } from "@ngx-progressbar/core";
+import { NgProgressHttpClientModule } from "@ngx-progressbar/http-client";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,14 @@ import { HttpClientModule } from "@angular/common/http";
     SearchCompComponent,
     NavComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

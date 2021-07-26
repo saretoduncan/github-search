@@ -1,0 +1,20 @@
+.search-form {
+  min-height: 100vh;
+}
+
+.fab {
+  font-size: 100px;
+}
+
+.text-color {
+  color: rgb(85, 152, 218);
+}
+
+.button {
+  border: none;
+  background-color: rgb(85, 152, 218);
+}
+
+.inputSearch {
+  border: none;
+}

@@ -11,6 +11,8 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { NgProgressModule } from "@ngx-progressbar/core";
 import { NgProgressHttpClientModule } from "@ngx-progressbar/http-client";
+import { AgoPipe } from './pipes/ago.pipe';
+import { HiglightDirective } from './directives/higlight.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { NgProgressHttpClientModule } from "@ngx-progressbar/http-client";
     NotfoundComponent,
     SearchCompComponent,
     NavComponent,
+    AgoPipe,
+    HiglightDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,67 @@
-<p>repositories works!</p>
+<app-nav></app-nav>
+<div class="container" *ngIf="userProfile">
+  <img class="img-fluid rounded-circle image" [src]="userProfile.avatarUrl" alt="" />
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="">
+        <div class="d-flex flex-column ms-2 mt-2">
+          <span class="fs-2 lh-1 text-color">{{userProfile.name}}</span>
+          <span *ngIf="userProfile.userName" class="text-color">@{{userProfile.userName}}</span
+          >
+        </div>
+      </div>
+
+      <div class="p-width">
+        <p class="text-light">{{userProfile.bio}}</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div>
+        <i class="fas fa-user-friends text-color"></i>
+        <span class="p-2 text-light" *ngIf="userProfile.followers"
+          >{{userProfile.followers}} Followers</span
+        >
+        <span class="text-light" *ngIf="userProfile.following"
+          >. {{userProfile.following}} Following</span
+        >
+      </div>
+      <div>
+        <div class="text-light">
+          <span *ngIf="userProfile.location" class="p-2 text-color"
+            ><i class="fas fa-map-marker-alt pe-2"></i></span
+          >{{userProfile.location}}
+        </div>
+        <div class="text-light">
+          <span *ngIf="userProfile.socialMedia" class="p-2 text-color"
+            ><i class="fab fa-twitter pe-2"></i></span
+          >{{userProfile.socialMedia}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="text-color" />
+</div>
+<div class="container">
+  <div class="row">
+    <div class="mt-3 col-12 col-sm-6 col-md-4" *ngFor="let rep of rep">
+      <div class="card cardSt p-2">
+        <h2 class="text-color">
+          <a [href]="rep.repo_link" target="_blank">{{rep.name}}</a>
+        </h2>
+        <p class="text-light">{{rep.description}}</p>
+        <div class="card-footer d-flex justify-content-between mt-auto">
+          <span class="text-light"
+            ><i class="far fa-star text-color"></i> {{rep.star}}</span
+          >
+          <span class="text-light"
+            ><i class="fas fa-code-branch text-color"></i> {{rep.forks}}</span
+          >
+          <span *ngIf="rep.homepage" class="text-light"
+            ><a [href]="rep.homepage" target="_blank"
+              ><i class="fas fa-desktop text-color"></i></a
+          ></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

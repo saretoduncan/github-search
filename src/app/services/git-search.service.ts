@@ -16,9 +16,7 @@ export class GitSearchService {
   getSearchResults(user: string) {
     let promise = new Promise((resolve, reject) => {
       this.http
-        .get<IuserProfile>(
-          `https://api.github.com/users/${user}?access_toke:${environment.personal_AccessToken}`
-        )
+        .get<IuserProfile>(`https://api.github.com/users/${user}`)
         .toPromise()
         .then(
           (response) => {

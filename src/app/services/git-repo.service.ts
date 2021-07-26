@@ -14,9 +14,7 @@ export class GitRepoService {
   getRepoDetails(user: string) {
     let promise = new Promise((resolve, reject) => {
       this.http
-        .get<Irepo[]>(
-          `https://api.github.com/users/${user}/repos?access_token:${environment.personal_AccessToken}`
-        )
+        .get<Irepo[]>(`https://api.github.com/users/${user}/repos`)
         .toPromise()
         .then(
           (response) => {

@@ -1,10 +1,10 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef } from "@angular/core";
 
 @Directive({
-  selector: '[appHiglight]'
+  selector: "[appHiglight]",
 })
 export class HiglightDirective {
-
-  constructor() { }
-
+  constructor(element: ElementRef) {
+    element.nativeElement.style.backgroundColor = "rgb(85, 152, 218)";
+  }
 }
